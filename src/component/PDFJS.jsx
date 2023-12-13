@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { pdfjsLib, pdfjsViewer } from "./utils/worker";
 import './PDFJS.css';
+import 'pdfjs-dist/web/pdf_viewer.css';
 
 const PdfViewerComponent = () => {
   const [pdfViewer, setPdfViewer] = useState(null);
