@@ -78,13 +78,25 @@ const PdfViewerComponent = () => {
       pdfViewer.currentPageNumber += 1;
     }
   };
+  const handleZoomIn = () => {
+    if (pdfViewer) {
+      pdfViewer.currentScale += 0.2; // Increase the zoom level by 20%
+    }
+  };
 
+  const handleZoomOut = () => {
+    if (pdfViewer) {
+      pdfViewer.currentScale -= 0.2; // Decrease the zoom level by 20%
+    }
+  };
   return (
     <div id="viewerContainer">
       <div id="viewer" className="pdfViewer"></div>
       <div className="navigation-buttons">
         <button onClick={handlePreviousPage}>Previous</button>
         <button onClick={handleNextPage}>Next</button>
+        <button onClick={handleZoomIn}>Zoom In</button>
+        <button onClick={handleZoomOut}>Zoom Out</button>
       </div>
     </div>
   );
